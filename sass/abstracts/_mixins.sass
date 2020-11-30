@@ -1,0 +1,37 @@
+=background-colour
+    @each $colour, $value in $colour-map-name
+       &--#{$colour} 
+           background: #{$value}
+
+=font-face($font-family, $file-name)
+    @font-face
+        font-family: $font-family
+        src: url('#{$font-path}/#{$file-name}.eot')
+        src: url('#{$font-path}/#{$file-name}.eot?#iefix') format('embedded-opentype'), url('#{$font-path}/#{$file-name}.woff2') format('woff2'), url('#{$font-path}/#{$file-name}.woff') format('woff'), url('#{$font-path}/#{$file-name}.ttf') format('truetype'),url('#{$font-path}/#{$file-name}.svg##{$file-name}') format('svg')
+        font-weight: normal
+
+=respond-to($breakpoint)
+    @if map-has-key($breakpoints, $breakpoint)
+        @media #{map-get($breakpoints, $breakpoint)}
+            @content
+
+    @else
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+
+=css-grid($template-columns: 1.875rem repeat(2, 1fr) 1.875rem, $auto-columns: null, $template-rows: null, $auto-rows: null, $column-gap: null, $row-gap: null, $gap: null)    
+    display: grid
+    grid:
+        template-columns: $template-columns
+        auto-columns: $auto-columns
+        template-rows: $template-rows
+        auto-rows: $auto-rows
+        column-gap: $column-gap
+        row-gap: $row-gap
+        gap: $gap
+
+=flexbox($justify-content: space-between, $align-items: null, $flex-wrap: null, $flex-direction: null)
+    display: flex
+    justify-content: $justify-content
+    align-items: $align-items
+    flex-wrap: $flex-wrap
+    flex-direction: $flex-direction

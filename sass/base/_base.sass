@@ -1,0 +1,54 @@
+*
+    box-sizing: border-box
+
+html, body
+    height: 100%
+
+body
+    margin: $margin
+    padding: $padding
+    font:
+        family: $stack-gilroy-regular, $stack-sans-serif
+        size: 100%
+
+@-moz-document url-prefix()
+    h1, h2, h3, h4, h5, h6, p
+        font-weight: normal
+
+html
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-smoothing: antialiased
+    scroll-behavior: smooth
+
+h1, h2, h3, h4, h5, h6
+    margin: $margin
+    padding: $padding
+    font:
+        family: $stack-gilroy-bold
+        size: 100%
+
+a
+    display: block
+    text:
+        decoration: none
+        align: center
+
+ul, ol
+    margin: $margin
+    padding: $padding
+    list-style: none
+
+img
+    max-width: 100%
+    max-height: 100%
+
+p
+    margin: $margin
+    padding: $padding
+    line-height: 1.4
+
+form
+    margin: $margin
+    padding: $padding
+

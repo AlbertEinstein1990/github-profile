@@ -1,0 +1,20 @@
+extends ../base
+
+append config
+    - var page = 'home'
+    - var pageTitle = 'Home'
+    - var cssClass = page
+
+block content
+    .section.user-profile
+        .profile-picture
+        .bio-data
+            span.name
+            span.username
+            span.bio
+
+    .section.repos
+        ul.repo-list
+                    
+                        
+                        

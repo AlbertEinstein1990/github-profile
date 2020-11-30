@@ -1,0 +1,29 @@
+.user-profile
+    border-bottom: 0.0625rem solid rgba($gray, 0.15)
+    padding: $padding
+
+.profile-picture
+    background:
+        size: contain
+        position: left center
+        repeat: no-repeat
+
+    height: 100%
+    border-radius: 0.625rem
+
+    grid-area: pp
+
+.bio-data
+    & > *
+        display: block
+
+    grid-area: bd
+
+.repo-icon-background
+    background: lighten($french-pass, 10%)
+    border-radius: 0.625rem
+    padding: 1rem
+    grid-area: rib
+
+.star-count-info
+    grid-area: sci

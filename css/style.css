@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy Regular", sans-serif;
+  font-size: 100%;
+}
+
+@-moz-document url-prefix() {
+  h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal;
+  }
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy Bold";
+  font-size: 100%;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("../fonts/Gilroy-Regular.eot");
+  src: url("../fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("truetype"), url("../fonts/Gilroy-Regular.svg#Gilroy-Regular") format("svg");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gilroy Medium";
+  src: url("../fonts/Gilroy-Medium.eot");
+  src: url("../fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("truetype"), url("../fonts/Gilroy-Medium.svg#Gilroy-Medium") format("svg");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url("../fonts/Gilroy-Bold.eot");
+  src: url("../fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("truetype"), url("../fonts/Gilroy-Bold.svg#Gilroy-Bold") format("svg");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gilroy Heavy";
+  src: url("../fonts/Gilroy-Heavy.eot");
+  src: url("../fonts/Gilroy-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Heavy.woff2") format("woff2"), url("../fonts/Gilroy-Heavy.woff") format("woff"), url("../fonts/Gilroy-Heavy.ttf") format("truetype"), url("../fonts/Gilroy-Heavy.svg#Gilroy-Heavy") format("svg");
+  font-weight: normal;
+}
+
+.name {
+  font-family: "Gilroy Bold";
+  font-size: 1.35rem;
+  color: #3d3d3d;
+  margin-bottom: 0.1rem;
+}
+
+.username {
+  font-family: "Gilroy Medium";
+  font-size: 1.15rem;
+  color: #a3a3a3;
+  margin-bottom: 0.8rem;
+}
+
+.bio {
+  font-size: 0.9rem;
+  color: #0366D6;
+}
+
+.repo-name {
+  font-family: "Gilroy Bold";
+  font-size: 1.2rem;
+  color: #3CC64A;
+  grid-area: rn;
+}
+
+.repo-description {
+  font-family: "Gilroy Medium";
+  color: #7e7e7e;
+  grid-area: rd;
+}
+
+.repo-description--none {
+  font-size: 0.9rem;
+  color: #a5a5a5;
+}
+
+.language {
+  font-family: "Gilroy Medium";
+  justify-self: start;
+  align-self: center;
+  padding: 0.3rem 1rem;
+  border-radius: 0.25rem;
+  grid-area: l;
+}
+
+.language--none {
+  font-family: "Gilroy Regular";
+  font-size: 0.9rem;
+  color: #a5a5a5;
+  padding: 0;
+  border-radius: 0;
+}
+
+.star-count {
+  color: #646464;
+}
+
+.copyright {
+  grid-area: c;
+}
+
+.site-container {
+  background: #F6F6F9;
+  min-height: 100vh;
+}
+
+.logo {
+  background: left center/contain no-repeat url("../images/github logo.png");
+  grid-area: l;
+}
+
+.content {
+  grid-area: c;
+}
+
+.section {
+  padding: 1.875rem 0;
+}
+
+.star-count-info {
+  display: flex;
+  align-items: center;
+}
+
+.site-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: max-content 1fr max-content;
+  grid-column-gap: 1.875rem;
+  grid-template-areas: 'h h h h h h h h h h h h' 'c c c c c c c c c c c c' 'f f f f f f f f f f f f';
+}
+
+.header {
+  display: grid;
+  grid-template-columns: inherit;
+  grid-template-rows: 2.5rem;
+  grid-column-gap: inherit;
+  grid-template-areas: '. . l . . . . . . . . .';
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1.875rem;
+}
+
+.user-profile {
+  grid-template-rows: repeat(3, 4rem);
+  grid-template-areas: '. . pp bd bd bd . . . . . .' '. . pp bd bd bd . . . . . .' '. . pp bd bd bd . . . . . .';
+  align-items: center;
+}
+
+.repos {
+  grid-template-areas: '. . rl rl rl rl rl rl rl rl . .';
+}
+
+.repo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38.39469rem, 1fr));
+  grid-auto-rows: max-content;
+  grid-gap: 1.875rem;
+}
+
+.repo-list__item {
+  display: grid;
+  grid-template-columns: repeat(2, auto) repeat(6, 1fr);
+  grid-template-rows: repeat(3, max-content);
+  grid-column-gap: 1.875rem;
+  grid-template-areas: 'rib rn rn rn rn . . .' 'rib rd rd rd rd rd rd .' 'rib l sci sci . . . .';
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: inherit;
+  grid-template-rows: max-content;
+  grid-column-gap: inherit;
+  grid-template-areas: '. . c c c . . . . . . .';
+}
+
+.header {
+  background: #24292E;
+  padding: 1.875rem 0;
+  grid-area: h;
+}
+
+.repo-list {
+  grid-area: rl;
+}
+
+.repo-list__item {
+  padding: 1.5625rem;
+  border-radius: 0.625rem;
+  background: #fff;
+}
+
+.footer {
+  padding: 1.875rem 0;
+  border-top: 0.0625rem solid rgba(139, 139, 139, 0.15);
+  grid-area: f;
+}
+
+.icon {
+  stroke-width: 1;
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
+
+.repo-icon {
+  stroke: #0366D6;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.star-icon {
+  margin-right: 0.8rem;
+  stroke: #646464;
+}
+
+.user-profile {
+  border-bottom: 0.0625rem solid rgba(139, 139, 139, 0.15);
+  padding: 0;
+}
+
+.profile-picture {
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 100%;
+  border-radius: 0.625rem;
+  grid-area: pp;
+}
+
+.bio-data {
+  grid-area: bd;
+}
+
+.bio-data > * {
+  display: block;
+}
+
+.repo-icon-background {
+  background: #e6f6ff;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  grid-area: rib;
+}
+
+.star-count-info {
+  grid-area: sci;
+}
+/*# sourceMappingURL=style.css.map */

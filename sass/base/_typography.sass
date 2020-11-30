@@ -1,0 +1,66 @@
++font-face($stack-gilroy-regular, 'Gilroy-Regular')
++font-face($stack-gilroy-medium, 'Gilroy-Medium')
++font-face($stack-gilroy-bold, 'Gilroy-Bold')
++font-face($stack-gilroy-heavy, 'Gilroy-Heavy')
+
+.name
+    font:
+        family: $stack-gilroy-bold
+        size: 1.35rem
+
+    color: $mine-shaft
+    margin-bottom: 0.1rem
+
+.username
+    font:
+        family: $stack-gilroy-medium
+        size: 1.15rem
+
+    color: lighten($mine-shaft, 40%)
+    margin-bottom: 0.8rem
+
+.bio
+    font-size: 0.9rem
+    color: $science-blue
+
+.repo
+    &-name
+        font:
+            family: $stack-gilroy-bold
+            size: 1.2rem
+
+        color: $apple
+        grid-area: rn
+    
+    &-description
+        &--none
+            font-size: 0.9rem
+            color: lighten($gray, 10%)
+
+        font-family: $stack-gilroy-medium
+        color: lighten($dove-gray, 10%)
+        grid-area: rd
+
+.language
+    &--none
+        font:
+            family: $stack-gilroy-regular
+            size: 0.9rem
+        
+        color: lighten($gray, 10%)
+        padding: $padding
+        border-radius: 0
+
+    font-family: $stack-gilroy-medium
+    justify-self: start
+    align-self: center
+    padding: 0.3rem 1rem
+    border-radius: 0.25rem    
+    grid-area: l
+
+.star-count
+    color: $dove-gray
+
+
+.copyright
+    grid-area: c
