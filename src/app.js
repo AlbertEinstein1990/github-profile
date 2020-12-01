@@ -30,7 +30,7 @@ const feather = require('feather-icons')
 
 let getUserProfile = async () =>
 {
-    let response = await fetch(process.env.API_URL, { method: 'POST', body: JSON.stringify({ query: userQuery }), headers: { Authorization: `Bearer ${process.env.TOKEN}`, Accept: 'application/json' } }),
+    let response = await fetch(process.env.API_URL, { method: 'POST', body: JSON.stringify({ query: userQuery }), headers: { Authorization: `Bearer ${localStorage.getItem('token')}`, Accept: 'application/json' } }),
         json = await response.json();
 
     let repoList = document.querySelector('.repo-list'),

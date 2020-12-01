@@ -41,6 +41,12 @@
         color: lighten($dove-gray, 10%)
         grid-area: rd
 
+        +respond-to('break-max-md')
+            font-size: 0.9rem
+            
+        +respond-to('break-max-lg')
+            margin-bottom: 0.9rem
+
 .language
     &--none
         font:

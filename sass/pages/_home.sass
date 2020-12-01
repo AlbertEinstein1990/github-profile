@@ -1,6 +1,9 @@
 .user-profile
     border-bottom: 0.0625rem solid rgba($gray, 0.15)
-    padding: $padding
+    padding: 1.875rem 0
+
+    +respond-to('break-md')
+        padding: $padding 
 
 .profile-picture
     background:
@@ -9,8 +12,6 @@
         repeat: no-repeat
 
     height: 100%
-    border-radius: 0.625rem
-
     grid-area: pp
 
 .bio-data
@@ -24,6 +25,9 @@
     border-radius: 0.625rem
     padding: 1rem
     grid-area: rib
+
+    +respond-to('break-max-lg')
+        display: none
 
 .star-count-info
     grid-area: sci
