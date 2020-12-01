@@ -1,31 +1,82 @@
 .site-container
-    +css-grid($template-columns: repeat(12, 1fr), $template-rows: max-content 1fr max-content, $column-gap: 1.875rem)
-    grid-template-areas: 'h h h h h h h h h h h h' 'c c c c c c c c c c c c' 'f f f f f f f f f f f f'
+    +respond-to('break-md')
+        +css-grid($template-columns: repeat(6, 1fr), $template-rows: max-content 1fr max-content, $column-gap: 1.875rem)
+        grid-template-areas: 'h h h h h h' 'c c c c c c' 'f f f f f f'
+    
+    +respond-to('break-lg')
+        +css-grid($template-columns: repeat(10, 1fr))
+        grid-template-areas: 'h h h h h h h h h h' 'c c c c c c c c c c' 'f f f f f f f f f f'
+
+    +respond-to('break-xl')
+        +css-grid($template-columns: repeat(12, 1fr))
+        grid-template-areas: 'h h h h h h h h h h h h' 'c c c c c c c c c c c c' 'f f f f f f f f f f f f'
 
 .header
-    +css-grid($template-columns: inherit, $template-rows: 2.5rem, $column-gap: inherit)
-    grid-template-areas: '. . l . . . . . . . . .'
+    +respond-to('break-md')
+        +css-grid($template-columns: inherit, $template-rows: 2.5rem, $column-gap: inherit)
+        grid-template-areas: '. l . . . .'
+    
+    +respond-to('break-lg')
+        +css-grid($template-columns: inherit, $template-rows: 2.5rem, $column-gap: inherit)
+        grid-template-areas: '. l . . . . . . . .'
+    
+    +respond-to('break-xl')
+        +css-grid($template-columns: inherit, $template-rows: 2.5rem, $column-gap: inherit)
+        grid-template-areas: '. . l . . . . . . . . .'
 
 .section
-    +css-grid($template-columns: repeat(12, 1fr), $column-gap: 1.875rem)
+    +respond-to('break-md')
+        +css-grid($template-columns: repeat(6, 1fr), $column-gap: 1.875rem)
+    
+    +respond-to('break-lg')
+        +css-grid($template-columns: repeat(10, 1fr))
+    
+    +respond-to('break-xl')
+        +css-grid($template-columns: repeat(12, 1fr))
 
 .user-profile
-    grid-template:
-        rows: repeat(3, 4rem)
-        areas: '. . pp bd bd bd . . . . . .' '. . pp bd bd bd . . . . . .' '. . pp bd bd bd . . . . . .'
-
+    grid-template-rows: repeat(3, 4rem)       
     align-items: center
 
+    +respond-to('break-md')
+        grid-template-areas: '. pp bd bd bd .' '. pp bd bd bd .' '. pp bd bd bd .'
+    
+    +respond-to('break-lg')
+        grid-template-areas: '. pp bd bd bd . . . . .' '. pp bd bd bd . . . . .' '. pp bd bd bd . . . . .'
+    
+    +respond-to('break-xl')
+        grid-template-areas: '. . pp bd bd bd . . . . . .' '. . pp bd bd bd . . . . . .' '. . pp bd bd bd . . . . . .'
+
 .repos
-    grid-template-areas: '. . rl rl rl rl rl rl rl rl . .'
+    +respond-to('break-md')
+        grid-template-areas: '. rl rl rl rl .'
+    
+    +respond-to('break-lg')
+        grid-template-areas: '. rl rl rl rl rl rl rl rl .'
+    
+    +respond-to('break-xl')
+        grid-template-areas: '. . rl rl rl rl rl rl rl rl . .'
 
 .repo-list
-    +css-grid($template-columns: repeat(auto-fill, minmax(38.3946875rem, 1fr)), $auto-rows: max-content, $gap: 1.875rem)
+    +respond-to('break-md')
+        +css-grid($template-columns: 1fr, $auto-rows: max-content, $gap: 1.875rem)
+    
+    +respond-to('break-xl')
+        +css-grid($template-columns: repeat(auto-fill, minmax(38.3946875rem, 1fr)), $auto-rows: max-content)
     
     &__item
         +css-grid($template-columns: repeat(2, auto) repeat(6, 1fr), $template-rows: repeat(3, max-content), $column-gap: 1.875rem)
         grid-template-areas: 'rib rn rn rn rn . . .' 'rib rd rd rd rd rd rd .' 'rib l sci sci . . . .'
 
 .footer
-    +css-grid($template-columns: inherit, $template-rows: max-content, $column-gap: inherit)
-    grid-template-areas: '. . c c c . . . . . . .'
+    +respond-to('break-md')
+        +css-grid($template-columns: inherit, $template-rows: max-content, $column-gap: inherit)
+        grid-template-areas: '. c c c . .'
+    
+    +respond-to('break-lg')
+        +css-grid($template-columns: inherit)
+        grid-template-areas: '. c c c . . . . . .'
+    
+    +respond-to('break-xl')
+        +css-grid($template-columns: inherit)
+        grid-template-areas: '. . c c c . . . . . . .'
